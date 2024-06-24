@@ -76,15 +76,15 @@ class _OnBoardingViewState extends State<OnBoardingView> {
                 return Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    SizedBox(height: 20),
+                  const   SizedBox(height: 20),
                     Image(image: AssetImage(onBoardingItem[index]["image"]!)),
-                    SizedBox(height: 20),
+                  const   SizedBox(height: 20),
                     Text(
                       onBoardingItem[index]["title"]!,
                       textAlign: TextAlign.center,
                       style: TextStyle(fontSize: 20, color: otherColor),
                     ),
-                    SizedBox(height: 10),
+                  const   SizedBox(height: 10),
                     Text(
                       onBoardingItem[index]["description"]!,
                       textAlign: TextAlign.center,
@@ -96,13 +96,13 @@ class _OnBoardingViewState extends State<OnBoardingView> {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.only(bottom: 10),
+            padding: const EdgeInsets.only(bottom: 70),
             child: Column(
               children: [
                 currentPage == (onBoardingItem.length - 1)
                     ? ElevatedButton(
                   onPressed: continueMethod,
-                  child: Text("Continue"),
+                  child: const Text("Continue"),
                 )
                     : Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -115,7 +115,7 @@ class _OnBoardingViewState extends State<OnBoardingView> {
                         width: index == currentPage ? 15 : 10,
                         margin: const EdgeInsets.symmetric(horizontal: 5),
                         decoration: BoxDecoration(
-                          color: index == currentPage ? Colors.black : Colors.blue,
+                          color: index == currentPage ? Colors.blue : Colors.blue,
                         ),
                       );
                     },
