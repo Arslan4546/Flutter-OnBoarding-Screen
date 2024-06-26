@@ -13,18 +13,18 @@ class _OnBoardingViewState extends State<OnBoardingView> {
   List<Map<String, String>> onBoardingItem = [
     {
       "image": "assets/images/image3.png",
-      "title": "A Happy Mode Between Two Brothers",
-      "description": "The two brother are sitting together and making the tea for each other",
+      "title": "Engage with the Community",
+      "description": "Connect with others, share your experiences, and stay updated with real-time interactions and notifications. Build your network effortlessly.",
     },
     {
       "image": "assets/images/image2.png",
-      "title": "A Family With A Happy Mode",
-      "description": "The parents are in a happy mode with their child",
+      "title": "Seamless Communication",
+      "description": "Enjoy smooth and intuitive messaging with our advanced chatbot feature. Get instant responses and stay informed without hassle.",
     },
     {
       "image": "assets/images/image1.png",
-      "title": "Cycling With Baby",
-      "description": "The parents are very happy with their child and take the cycle game",
+      "title": "Secure and Protected",
+      "description": "Your privacy is our priority. With state-of-the-art encryption and security measures, ensure your data is safe and secure at all times.",
     },
   ];
 
@@ -55,6 +55,7 @@ class _OnBoardingViewState extends State<OnBoardingView> {
         actions: [
           Padding(
             padding: const EdgeInsets.only(right:20),
+
             child: TextButton(
               onPressed: continueMethod,
               child: Text(
@@ -86,13 +87,17 @@ class _OnBoardingViewState extends State<OnBoardingView> {
                     Text(
                       onBoardingItem[index]["title"]!,
                       textAlign: TextAlign.center,
-                      style: TextStyle(fontSize: 20, color: otherColor),
+                      style: TextStyle(fontSize: 20, color: otherColor,
+                          fontWeight: FontWeight.bold),
                     ),
                   const   SizedBox(height: 10),
-                    Text(
-                      onBoardingItem[index]["description"]!,
-                      textAlign: TextAlign.center,
-                      style: TextStyle(fontSize: 18, color: otherColor),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 20),
+                      child: Text(
+                        onBoardingItem[index]["description"]!,
+                        textAlign: TextAlign.center,
+                        style: TextStyle(fontSize: 18, color: otherColor,),
+                      ),
                     ),
                   ],
                 );
@@ -100,14 +105,20 @@ class _OnBoardingViewState extends State<OnBoardingView> {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.only(bottom: 70),
+            padding: const EdgeInsets.only(bottom: 60),
             child: Column(
               children: [
                 currentPage == (onBoardingItem.length - 1)
                     ? ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.yellow,
+                    minimumSize: Size(150, 50),
 
+                  ),
                   onPressed: continueMethod,
-                  child: const Text("Continue"),
+                  child: const Text("Continue",style: TextStyle(
+                    fontWeight: FontWeight.bold,color: Colors.black
+                  ),),
                 )
                     : Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -116,12 +127,12 @@ class _OnBoardingViewState extends State<OnBoardingView> {
                         (index) {
                       return AnimatedContainer(
                         duration: const Duration(milliseconds: 200),
-                        height: 10,
-
-                        width: index == currentPage ? 15 : 10,
+                        height: index == currentPage ? 20 : 10,
+                        width: index == currentPage ? 20 : 10,
                         margin: const EdgeInsets.symmetric(horizontal: 5),
                         decoration: BoxDecoration(
-                          color: index == currentPage ? Colors.blue : Colors.blue,
+                          color: index == currentPage ? Colors.yellow : Colors.yellow,
+                          shape: BoxShape.circle,
                         ),
                       );
                     },
