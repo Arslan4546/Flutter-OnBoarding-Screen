@@ -12,17 +12,17 @@ class OnBoardingView extends StatefulWidget {
 class _OnBoardingViewState extends State<OnBoardingView> {
   List<Map<String, String>> onBoardingItem = [
     {
-      "image": "assets/images/img1.png",
+      "image": "assets/images/image3.png",
       "title": "A Happy Mode Between Two Brothers",
       "description": "The two brother are sitting together and making the tea for each other",
     },
     {
-      "image": "assets/images/img2.png",
+      "image": "assets/images/image2.png",
       "title": "A Family With A Happy Mode",
       "description": "The parents are in a happy mode with their child",
     },
     {
-      "image": "assets/images/img3.png",
+      "image": "assets/images/image1.png",
       "title": "Cycling With Baby",
       "description": "The parents are very happy with their child and take the cycle game",
     },
@@ -53,12 +53,16 @@ class _OnBoardingViewState extends State<OnBoardingView> {
         backgroundColor: Colors.transparent,
         elevation: 0,
         actions: [
-          TextButton(
-            onPressed: continueMethod,
-            child: Text(
-              "Skip",
-              style: TextStyle(
-                color: otherColor,
+          Padding(
+            padding: const EdgeInsets.only(right:20),
+            child: TextButton(
+              onPressed: continueMethod,
+              child: Text(
+                "Skip",
+                style: TextStyle(
+                  color: otherColor,
+                  fontSize: 20,
+                ),
               ),
             ),
           )
@@ -101,6 +105,7 @@ class _OnBoardingViewState extends State<OnBoardingView> {
               children: [
                 currentPage == (onBoardingItem.length - 1)
                     ? ElevatedButton(
+
                   onPressed: continueMethod,
                   child: const Text("Continue"),
                 )
@@ -112,6 +117,7 @@ class _OnBoardingViewState extends State<OnBoardingView> {
                       return AnimatedContainer(
                         duration: const Duration(milliseconds: 200),
                         height: 10,
+
                         width: index == currentPage ? 15 : 10,
                         margin: const EdgeInsets.symmetric(horizontal: 5),
                         decoration: BoxDecoration(
